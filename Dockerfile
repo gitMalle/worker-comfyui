@@ -67,9 +67,6 @@ WORKDIR /comfyui
 # Support for the network volume
 ADD src/extra_model_paths.yaml ./
 
-# Install custom nodes like this
-RUN comfy-node-install comfyui-impact-subpack
-
 # Go back to the root
 WORKDIR /
 
@@ -83,6 +80,9 @@ RUN chmod +x /start.sh
 # Add script to install custom nodes
 COPY scripts/comfy-node-install.sh /usr/local/bin/comfy-node-install
 RUN chmod +x /usr/local/bin/comfy-node-install
+
+# Install custom nodes like this
+RUN comfy-node-install comfyui-impact-subpack
 
 # Prevent pip from asking for confirmation during uninstall steps in custom nodes
 ENV PIP_NO_INPUT=1
