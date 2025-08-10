@@ -5,9 +5,9 @@ ARG BASE_IMAGE=nvidia/cuda:12.6.3-cudnn-runtime-ubuntu24.04
 FROM ${BASE_IMAGE} AS base
 
 # Build arguments for this stage (defaults provided by docker-bake.hcl)
-ARG COMFYUI_VERSION
-ARG CUDA_VERSION_FOR_COMFY
-ARG ENABLE_PYTORCH_UPGRADE
+ARG COMFYUI_VERSION=0.3.44
+ARG CUDA_VERSION_FOR_COMFY=12.6
+ARG ENABLE_PYTORCH_UPGRADE=false
 ARG PYTORCH_INDEX_URL
 
 # Prevents prompts from packages asking for user input during installation
@@ -99,7 +99,7 @@ FROM base AS downloader
 
 ARG HUGGINGFACE_ACCESS_TOKEN
 # Set default model type if none is provided
-ARG MODEL_TYPE=flux1-dev-fp8
+ARG MODEL_TYPE=base
 
 # Change working directory to ComfyUI
 WORKDIR /comfyui
