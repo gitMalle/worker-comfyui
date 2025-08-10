@@ -82,7 +82,7 @@ COPY scripts/comfy-node-install.sh /usr/local/bin/comfy-node-install
 RUN chmod +x /usr/local/bin/comfy-node-install
 
 # Install custom nodes like this
-RUN comfy-node-install comfyui-impact-subpack
+RUN comfy-node-install comfyui-impact-pack comfyui-impact-subpack ComfyUI-GGUF comfyui-easy-use
 
 # Prevent pip from asking for confirmation during uninstall steps in custom nodes
 ENV PIP_NO_INPUT=1
