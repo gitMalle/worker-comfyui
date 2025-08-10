@@ -67,6 +67,9 @@ WORKDIR /comfyui
 # Support for the network volume
 ADD src/extra_model_paths.yaml ./
 
+# Install custom nodes like this
+RUN comfy-node-install comfyui-impact-subpack
+
 # Go back to the root
 WORKDIR /
 
