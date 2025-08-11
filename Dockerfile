@@ -88,7 +88,7 @@ ENV PIP_NO_INPUT=1
 RUN comfy-node-install comfyui-impact-pack comfyui-impact-subpack ComfyUI-GGUF comfyui-easy-use
 
 RUN git clone https://github.com/ClownsharkBatwing/RES4LYF /comfyui/custom_nodes/RES4LYF
-WORKDIR /comfyui/custom_nodes/ComfyUI-Impact-Pack
+WORKDIR /comfyui/custom_nodes/RES4LYF
 RUN pip3 install -r requirements.txt
 
 # Copy helper script to switch Manager network mode at container start
